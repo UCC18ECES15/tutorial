@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+void calculation();
+void student_name();
+int main()
+{
+int i=0;
+student_name();
+//printf("Enter the choice of student roll number:");
+//scanf("%d",&i);
+///*switch(i)
+{
+      case 1:
+      printf("first student marks");
+      printf("\n");
+      calculation();
+      case 2:
+      printf("second student marks");
+      printf("\n");
+      calculation();
+      break;
+      default:
+      printf("student name not available");
+}*///
+for (;i<2;i++)
+{
+    printf("student marks");
+      printf("\n");
+      calculation();
+
+}
+}
+void calculation()
+{
+float marks,avg ,total=0;
+int i=1;
+char grade;
+printf("Enter the  5 subject marks :");
+printf("\n");
+while(i<=5)
+{
+scanf("%f",&marks);
+ if(marks<=0)
+ {
+        printf("Entering mark is not sufficient");
+        continue;
+ }
+    total+=marks;
+    i++;
+}
+avg=total/5;
+if(avg<=95)
+
+    grade='A';
+else if(avg<=85)
+    grade='B';
+else if(avg<=75)
+    grade='C';
+else if(avg<=50)
+    grade='P';
+    else
+    printf("not eligible for the current exam");
+    printf("The avg is:%f \nthe grade is:%c\n The total mark is:%f\n",avg,grade,total);
+}
+
+void student_name()
+{
+   int n=2,i;
+char str[20][20]; // Can store 20 strings, each of length 20
+printf("Enter  2 number of name ");
+//scanf("%d",&n); //how many string
+printf("\n");
+//input each string
+for(i=0;i<n;i++)
+{
+   scanf("%s",str[i]);
+}
+//display each string
+printf("Entered name is:\n");
+for(i=0;i<n;i++)
+{
+   printf("%d.%s",i+1,str[i]);
+   printf("\n");
+}
+}
